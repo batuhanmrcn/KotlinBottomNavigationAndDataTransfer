@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/anasayfa">
+
+    <fragment
+        android:id="@+id/anasayfa"
+        android:name="com.example.proje.Anasayfa"
+        android:label="fragment_anasayfa"
+        tools:layout="@layout/fragment_anasayfa" >
+        <action
+            android:id="@+id/detay_gecis"
+            app:destination="@id/detayFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detayFragment"
+        android:name="com.example.proje.Detaysayfa"
+        android:label="fragment_detaysayfa"
+        tools:layout="@layout/fragment_detaysayfa" >
+        <argument
+            android:name="ad"
+            app:argType="string"
+            android:defaultValue="isim yok" />
+        <argument
+            android:name="yas"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="bekar"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <argument
+            android:name="urun"
+            app:argType="com.example.proje.Urunler" />
+    </fragment>
+    <fragment
+        android:id="@+id/detayFragment"
+        android:name="com.example.proje.AyarlarFragment"
+        android:label="fragment_ayarlar"
+        tools:layout="@layout/fragment_ayarlar" />
+</navigation>
